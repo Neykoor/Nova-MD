@@ -1,4 +1,4 @@
-import { getAllPluginsUnique } from '../lib/pluginLoader.js'
+import { getAllPluginsUnique } from '../../lib/pluginLoader.js'
 
 export default {
   command: ['menu', 'help', 'ayuda'],
