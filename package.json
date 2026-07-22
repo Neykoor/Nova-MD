@@ -1,7 +1,7 @@
 {
   "name": "nova-md",
   "version": "1.0.0",
-  "description": "Bot de WhatsApp multi-dispositivo con sistema de plugins",
+  "description": "El mejor bot de WhatsApp multi-dispositivo con sistema de plugins",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -13,7 +13,7 @@
   "license": "MIT",
   "dependencies": {
     "baileys": "npm:@neykoor/baileys@7.0.7-rc15",
-    "@hapi/boom": "^10.0.1",
+    "@neykoor/boom": "latest",
     "axios": "^1.7.7",
     "chalk": "^5.3.0",
     "cfonts": "^3.3.0",
