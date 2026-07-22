@@ -13,10 +13,12 @@ export default {
   // Prefijo(s) de comandos. Puedes poner varios: ['.', '!', '/']
   prefix: ['.', '!', '#'],
 
-  // Método de login: 'qr' o 'code' (código de emparejamiento)
+  // Método de login por defecto: 'qr' o 'code'. Si no usas --qr/--code al iniciar,
+  // el bot te preguntará por consola la primera vez (o si borras la carpeta "session").
   loginMethod: process.argv.includes('--code') ? 'code' : 'qr',
 
-  // Número para solicitar código de emparejamiento (sin '+', solo si loginMethod = 'code')
+  // Número para el código de emparejamiento. Solo se usa si eliges "code" y no
+  // lo escribes cuando el bot te lo pregunte por consola.
   phoneNumber: '521234567890',
 
   // Zona horaria para saludos/fecha
