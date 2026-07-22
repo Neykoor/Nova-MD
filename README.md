@@ -37,20 +37,35 @@ Edita `config.js`:
 - `owner`: número(s) del dueño del bot (sin `+`, con lada).
 - `botName`: nombre que se muestra en el menú.
 - `prefix`: prefijos aceptados para comandos (por defecto `.`, `!`, `#`).
-- `loginMethod`: `'qr'` o `'code'`.
-- `phoneNumber`: tu número si usas login por código.
+- `loginMethod`: método por defecto (`'qr'` o `'code'`), solo aplica si arrancas con `npm start` sin flags.
+- `phoneNumber`: número de respaldo para el código de emparejamiento (por si no lo escribes cuando el bot lo pregunta).
 
 ## ▶️ Iniciar el bot
 
 ```bash
-# Con código QR (por defecto)
 npm start
-
-# Con código de emparejamiento
-npm run code
 ```
 
-La sesión se guarda en la carpeta `session/`. Si necesitas cerrar sesión, borra esa carpeta y vuelve a iniciar.
+Si aún no tienes sesión guardada (carpeta `session/`), el bot te preguntará por consola cómo quieres vincularlo:
+
+```
+[NOVA MD] ¿Cómo quieres vincular el bot?
+  1. Código QR
+  2. Código de emparejamiento
+Elige una opción (1/2):
+```
+
+- Si eliges **1**, te muestra el QR para escanear.
+- Si eliges **2**, te pide tu número de WhatsApp (sin `+`, con lada) y te da el código de 8 dígitos para ingresarlo en WhatsApp → Dispositivos vinculados → Vincular con número de teléfono.
+
+También puedes saltarte la pregunta forzando el método por línea de comandos:
+
+```bash
+npm run qr     # fuerza vinculación por QR
+npm run code   # fuerza vinculación por código
+```
+
+La sesión se guarda en la carpeta `session/`. Si necesitas cerrar sesión, borra esa carpeta y vuelve a iniciar (te volverá a preguntar).
 
 ## 🧩 Estructura del proyecto
 
